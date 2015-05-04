@@ -156,6 +156,8 @@ if [ ! -f $GEM_HOME/bin/compass ]; then
   HOME="$cache_dir/ruby" gem install compass --user-install --no-rdoc --no-ri
 fi
 
+compass -v
+
 # Check and run Bower
 (
   if [ -f $build_dir/bower.json ]; then
