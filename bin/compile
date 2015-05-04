@@ -20,6 +20,13 @@ source $bp_dir/bin/common.sh
 # Output npm debug info on error
 trap cat_npm_debug_log ERR
 
+echo $STACK
+if [ "$STACK" == "cedar14" ]; then
+  echo "2.2.0"
+else
+  echo "1.9.1"
+fi
+
 # Look in package.json's engines.node field for a semver range
 semver_range=$(cat $build_dir/package.json | $bp_dir/vendor/jq -r .engines.node)
 
@@ -155,8 +162,6 @@ if [ ! -f $GEM_HOME/bin/compass ]; then
   HOME="$cache_dir/ruby" gem install sass -v 3.4.1 --user-install --no-rdoc --no-ri
   HOME="$cache_dir/ruby" gem install compass --user-install --no-rdoc --no-ri
 fi
-
-compass -v
 
 # Check and run Bower
 (
