@@ -146,23 +146,7 @@ status "Building runtime environment"
 mkdir -p $build_dir/.profile.d
 echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\";" > $build_dir/.profile.d/nodejs.sh
 
-for entry in "$cache_dir"/*
-do
-  echo "$entry"
-done
-for entry in "$cache_dir/ruby"/*
-do
-  echo "$entry"
-done
-for entry in "$cache_dir/ruby/.gem"/*
-do
-  echo "$entry"
-done
-for entry in "$cache_dir/ruby/.gem/ruby"/*
-do
-  echo "$entry"
-done
-for entry in "$cache_dir/ruby/.gem/ruby/1.9.1"/*
+for entry in "$cache_dir/ruby/.gem/ruby/1.9.1/bin"/*
 do
   echo "$entry"
 done
@@ -176,6 +160,8 @@ if [ ! -f $GEM_HOME/bin/compass ]; then
   HOME="$cache_dir/ruby" gem install sass -v 3.4.1 --user-install --no-rdoc --no-ri
   HOME="$cache_dir/ruby" gem install compass --user-install --no-rdoc --no-ri
 fi
+
+compass -v
 
 # Check and run Bower
 (
