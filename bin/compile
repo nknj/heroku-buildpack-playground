@@ -155,7 +155,7 @@ if [ ! -f $GEM_HOME/bin/compass ]; then
   HOME="$cache_dir/ruby" gem install sass -v 3.4.1 --user-install --no-rdoc --no-ri
   HOME="$cache_dir/ruby" gem install compass --user-install --no-rdoc --no-ri
 fi
-cp -r /app/vendor/ruby-1.9.2 $build_dir/vendor
+cp -r $cache_dir/ruby $build_dir/vendor
 compass -v
 
 # Check and run Bower
