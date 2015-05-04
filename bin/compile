@@ -21,7 +21,7 @@ source $bp_dir/bin/common.sh
 trap cat_npm_debug_log ERR
 
 echo $STACK
-if [ "$STACK" == "cedar14" ]; then
+if [ "$STACK" == "cedar-14" ]; then
   echo "2.2.0"
 else
   echo "1.9.1"
