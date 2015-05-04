@@ -146,7 +146,17 @@ status "Building runtime environment"
 mkdir -p $build_dir/.profile.d
 echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\";" > $build_dir/.profile.d/nodejs.sh
 
-for entry in "/app/vendor"/*
+for entry in "/app/vendor/ruby-2.2.2"/*
+do
+  echo "$entry"
+done
+
+for entry in "/app/vendor/ruby-2.2.2/.gem"/*
+do
+  echo "$entry"
+done
+
+for entry in "/app/vendor/ruby-2.2.2/.gem/ruby"/*
 do
   echo "$entry"
 done
