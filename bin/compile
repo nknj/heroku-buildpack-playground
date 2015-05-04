@@ -158,7 +158,6 @@ if [ ! -f $GEM_HOME/bin/compass ]; then
 fi
 
 compass -v
-$GEM_HOME/bin/compass -v
 
 # Check and run Bower
 (
@@ -187,8 +186,7 @@ $GEM_HOME/bin/compass -v
     echo "-----> Found Gruntfile, running grunt heroku:$NODE_ENV task"
     echo "~~~> $PATH"
     compass -v
-    $GEM_HOME/bin/compass -v
-    
+
     if [ -z "$GRUNT_FLAGS" ]; then
       $build_dir/node_modules/.bin/grunt heroku:$NODE_ENV
     else
