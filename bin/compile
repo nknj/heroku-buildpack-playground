@@ -157,10 +157,7 @@ if [ ! -f $GEM_HOME/bin/compass ]; then
   HOME="$cache_dir/ruby" gem install compass --user-install --no-rdoc --no-ri
 fi
 
-for entry in "$GEM_HOME/bin"/*
-do
-  echo "$entry"
-done
+echo "~!~!~!~> compass -v"
 
 # Check and run Bower
 (
@@ -187,6 +184,8 @@ done
     npm install grunt-cli
     npm install grunt
     echo "-----> Found Gruntfile, running grunt heroku:$NODE_ENV task"
+    echo "~~~> compass -v"
+    echo "~~~> $PATH"
 
     if [ -z "$GRUNT_FLAGS" ]; then
       $build_dir/node_modules/.bin/grunt heroku:$NODE_ENV
